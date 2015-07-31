@@ -113,6 +113,43 @@
         <% end %>
     </div>
   </div>
+
+  <%if !@json_response.nil? %>
+      <div class="col-lg-5 col-sm-offset-3 main-content-feature" id = "cardreader">
+        <h3>Card Reader Orders</h3>
+        <table class="table table-bordered">
+          <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Model</th>
+            <th>Quantity</th>
+            <th>Status</th>
+          </tr>
+          </thead>
+          <tbody>
+          <% @json_response.each do |c| %>
+              <% if(c["productId"] == 122698) %>
+                <% model = "Verifone Pinpad" %>
+              <% end %>
+              <% if(c["productId"] == 122012) %>
+                  <% model = "iMag Pro" %>
+              <% end %>
+              <% if(c["productId"] == 121524) %>
+                  <% model = "Unimag Pro" %>
+              <% end %>
+              <tr>
+                <td><%=   c["orderId"]    %></td>
+                <td><%=   model   %></td>
+                <td><%=   c["quantity"]   %></td>
+                <td><%=   c["status"]   %></td>
+              </tr>
+          <% end %>
+          </tbody>
+        </table>
+        <a href="/cardreader/form/<%= @user.id %>">New Order?</a>
+      </div>
+  <% end%>
+
 </div>
 
 <div class="demo">
@@ -145,7 +182,6 @@
     </table>
     </div>
 <% end%>
-
 <script>
 
   document.getElementById("mfa").style.margin = "-90px -50px 400px 300px";

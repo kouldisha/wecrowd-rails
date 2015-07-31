@@ -1,0 +1,72 @@
+<div class="row">
+  <div class="col-lg-12 main-content-feature">
+<%= form_tag("/cardreader/form", 'data-persist' => 'garlic', 'data-destroy' => 'false' ) do %>
+        <div class="col-lg-5 main-content-feature">
+          <div class="row">
+            <h3 class="upper">Card Reader Order Form</h3>
+          </div>
+
+          <div class="row main-content-feature">
+            <label for="Name">Name</label>
+            <%= text_field_tag(:campaign_name, params[:campaign_name], :class => 'text form-control input-lg gray', :placeholder => 'Coffee for Everyone!', :maxlength => 255) %>
+          </div>
+
+          <div class="row main-content-feature">
+            <label for="Company">Company</label>
+            <%= text_field_tag(:campaign_description, params[:campaign_description], :class => 'text form-control input-lg gray', :placeholder => 'Let\'s supply coffee to the overworked people.') %>
+          </div>
+
+          <div class="row main-content-feature">
+            <label for="Email">Email Address</label>
+            <%= text_field_tag(:campaign_goal, params[:campaign_goal], :class => 'text form-control input-lg gray', :placeholder => '$5,000', :maxlength => 10) %>
+          </div>
+
+          <div class="row main-content-feature">
+            <label for="Phone">Phone Number</label>
+            <%= text_field_tag(:campaign_goal, params[:campaign_goal], :class => 'text form-control input-lg gray', :placeholder => '$5,000', :maxlength => 10) %>
+          </div>
+
+          <div class="row main-content-feature">
+            <label for="Street Address">Street Address</label>
+            <%= text_field_tag(:campaign_goal, params[:campaign_goal], :class => 'text form-control input-lg gray', :placeholder => '$5,000', :maxlength => 10) %>
+          </div>
+
+          <div class="row main-content-feature">
+            <label for="Suite Number">Apartment/Room Number</label>
+            <%= text_field_tag(:campaign_goal, params[:campaign_goal], :class => 'text form-control input-lg gray', :placeholder => '$5,000', :maxlength => 10) %>
+          </div>
+
+          <div class="row main-content-feature">
+            <label for="City">City</label>
+            <%= text_field_tag(:campaign_goal, params[:campaign_goal], :class => 'text form-control input-lg gray', :placeholder => '$5,000', :maxlength => 10) %>
+          </div>
+
+          <div class="row main-content-feature">
+            <label for="Zip">Zip Code</label>
+            <%= text_field_tag(:campaign_goal, params[:campaign_goal], :class => 'text form-control input-lg gray', :placeholder => '$5,000', :maxlength => 10) %>
+          </div>
+
+          <div class="row main-content-feature">
+            <label for="State">State</label>
+            <%= text_field_tag(:campaign_goal, params[:campaign_goal], :class => 'text form-control input-lg gray', :placeholder => '$5,000', :maxlength => 10) %>
+          </div>
+
+          <div class="row main-content-feature">
+            <label for="Model">Card Reader Model</label>
+            <%= text_field_tag(:campaign_goal, params[:campaign_goal], :class => 'text form-control input-lg gray', :placeholder => '$5,000', :maxlength => 10) %>
+          </div>
+
+          <div class="row main-content-feature">
+            <label for="Quantity">Quantity</label>
+            <%= text_field_tag(:campaign_goal, params[:campaign_goal], :class => 'text form-control input-lg gray', :placeholder => '$5,000', :maxlength => 10) %>
+          </div>
+
+          <div class="row main-content-feature">
+            <label for="Shipping Method">Shipping Method</label>
+            <%= text_field_tag(:campaign_goal, params[:campaign_goal], :class => 'text form-control input-lg gray', :placeholder => '$5,000', :maxlength => 10) %>
+          </div>
+
+        </div>
+    <% end %>
+  </div>
+</div>

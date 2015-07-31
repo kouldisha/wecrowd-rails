@@ -17,6 +17,16 @@ class UserController < ApplicationController
     @campaigns = @user.campaigns
     @update_uri = @user.get_wepay_account_update_uri['uri']
     @mfa = Mfa.find_by_user_id(@user.id)
+    account_id = @user.wepay_account_id
+    order_params = {"account_id" => account_id}
+    uri = URI.parse("http://53e9ec16.ngrok.io/order/card_reader/existing_orders")
+    http = Net::HTTP.new(uri.host, uri.port)
+    request = Net::HTTP::Post.new(uri.path, {'Content-Type' =>'application/json'})
+    request.body = order_params.to_json
+    response = http.request(request)
+    @json_response = JSON.parse(response.body)
+    #render json: json_response
+
   end
 
   def edit

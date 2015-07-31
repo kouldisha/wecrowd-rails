@@ -1,0 +1,78 @@
+<div class="row">
+  <div class="col-lg-12 main-content-feature">
+    <%= form_tag("/cardreader/form/#{@user.id}", 'data-persist' => 'garlic', 'data-destroy' => 'false' ) do %>
+        <div class="col-lg-5 main-content-feature">
+          <div class="row">
+            <h3 class="upper">Card Reader Order Form</h3>
+          </div>
+
+          <div class="row main-content-feature">
+            <label for="Name">Name</label>
+            <%= text_field_tag(:name, params[:name], :class => 'text form-control input-lg gray', :placeholder => 'Test User', :maxlength => 255) %>
+          </div>
+
+          <div class="row main-content-feature">
+            <label for="Company">Company</label>
+            <%= text_field_tag(:company, params[:company], :class => 'text form-control input-lg gray', :placeholder => 'WePay') %>
+          </div>
+
+          <div class="row main-content-feature">
+            <label for="Email">Email Address</label>
+            <%= text_field_tag(:email, params[:email], :class => 'text form-control input-lg gray', :placeholder => 'test@example.com') %>
+          </div>
+
+          <div class="row main-content-feature">
+            <label for="Phone">Phone Number</label>
+            <%= text_field_tag(:phone, params[:phone], :class => 'text form-control input-lg gray', :placeholder => '000-000-0000', :maxlength => 10) %>
+          </div>
+
+          <div class="row main-content-feature">
+            <label for="Street Address">Street Address</label>
+            <%= text_field_tag(:street_address, params[:street_address], :class => 'text form-control input-lg gray', :placeholder => '100 WePay Drive') %>
+          </div>
+
+          <div class="row main-content-feature">
+            <label for="Suite Number">Apartment/Room Number</label>
+            <%= text_field_tag(:suite_number, params[:suite_number], :class => 'text form-control input-lg gray', :placeholder => '1') %>
+          </div>
+
+          <div class="row main-content-feature">
+            <label for="City">City</label>
+            <%= text_field_tag(:city, params[:city], :class => 'text form-control input-lg gray', :placeholder => 'Redwood City') %>
+          </div>
+
+          <div class="row main-content-feature">
+            <label for="Zip">Zip Code</label>
+            <%= text_field_tag(:zipcode, params[:zipcode], :class => 'text form-control input-lg gray', :placeholder => '94063', :maxlength => 5) %>
+          </div>
+
+          <div class="row main-content-feature">
+            <label for="state">State</label>
+            <%= select_tag(:state, options_for_select([['California', "CA"], ['New York', "NY"],['Illinois', "IL"]], selected: :option)) %>
+          </div>
+
+          <div class="row main-content-feature">
+            <label for="model">Model</label>
+            <%= select_tag(:model, options_for_select([['iMag Pro', '122012'], ['Verifone Pinpad', '122698'],['Unimag Pro', '121524']], selected: :option)) %>
+          </div>
+
+          <div class="row main-content-feature">
+            <label for="quantity">Quantity</label>
+            <%= select_tag(:quantity, options_for_select([['1', 1], ['2', 2],['3', 3]], selected: :option)) %>
+          </div>
+
+          <div class="row main-content-feature">
+            <label for="shipping_method">Shipping Method</label>
+            <%= select_tag(:shipping_method, options_for_select([['Ground', "GROUND"], ['One Day', "ONE_DAY"],['Two Day', "TWO_DAY"]], selected: :option)) %>
+          </div>
+
+          <div class="row">
+            <div class="col-md-5 col-center">
+              <button type="submit" class="btn btn-orange">Submit Order</button>
+            </div>
+          </div>
+
+        </div>
+    <% end %>
+  </div>
+</div>

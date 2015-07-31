@@ -46,6 +46,9 @@ Rails.application.routes.draw do
   
   get '/mfa/google_auth_challenge/:user_id', :to => "mfa#google_auth_challenge"
   post '/mfa/google_auth_challenge/:user_id', :to => "mfa#verify"
+  get '/cardreader/form/:user_id', :to => "cardreader#form"
+  post '/cardreader/form/:user_id', :to => "cardreader#order"
+  get '/cardreader/submitted/:user_id', :to => "cardreader#submitted"
   
  namespace :api do
      resources :campaigns
