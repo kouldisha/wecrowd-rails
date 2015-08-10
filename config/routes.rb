@@ -50,7 +50,10 @@ Rails.application.routes.draw do
   
   get '/mfa/google_auth_challenge/:user_id', :to => "mfa#google_auth_challenge"
   post '/mfa/google_auth_challenge/:user_id', :to => "mfa#verify"
-  
+
+  get '/cardreader/order_form/:user_id', :to => "cardreader#order_form"
+  post '/cardreader/order_form/:user_id', :to => "cardreader#submit_order"
+  get '/cardreader/order_summary/:user_id/:order_id', :to => "cardreader#order_summary"
  namespace :api do
      resources :campaigns
      resources :donate

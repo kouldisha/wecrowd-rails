@@ -17,6 +17,8 @@ class UserController < ApplicationController
     @campaigns = @user.campaigns
     @update_uri = @user.get_wepay_account_update_uri['uri']
     @mfa = Mfa.find_by_user_id(@user.id)
+    #@card_readers = Cardreader.find_by_user_id(@user.id)
+    @card_readers = Cardreader.where(user_id: @user.id)
   end
 
   def edit

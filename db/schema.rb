@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150723193717) do
+ActiveRecord::Schema.define(version: 20150807195908) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,12 +33,32 @@ ActiveRecord::Schema.define(version: 20150723193717) do
   add_index "campaigns", ["featured"], name: "index_campaigns_on_featured", using: :btree
   add_index "campaigns", ["user_id"], name: "index_campaigns_on_user_id", using: :btree
 
+  create_table "cardreaders", force: true do |t|
+    t.integer "user_id"
+    t.string  "name"
+    t.string  "email"
+    t.integer "model_id"
+    t.integer "quantity"
+    t.string  "shipping_method"
+    t.integer "order_id"
+    t.string  "status"
+  end
+
   create_table "mfas", force: true do |t|
     t.integer "user_id"
     t.string  "nickname"
     t.string  "state"
     t.integer "wepay_mfa_id"
     t.string  "mfa_type"
+  end
+
+  create_table "orders", force: true do |t|
+    t.integer "user_id"
+    t.string  "name"
+    t.string  "email"
+    t.integer "model_id"
+    t.integer "quantity"
+    t.string  "shipping_method"
   end
 
   create_table "payments", force: true do |t|

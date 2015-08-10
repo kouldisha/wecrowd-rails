@@ -1,0 +1,59 @@
+<div id="spacer"></div>
+<div class="col-lg-12 main-content-feature text-center">
+  <div class="row">
+    <h2>Here is a summary of your order: </h2>
+  </div>
+</div>
+<div class = "row">
+  <label for="name">Name:</label>
+  <%= @name%>
+</div>
+<div class = "row">
+  <label for="company">Company:</label>
+  <%=@company%>
+</div>
+<div class = "row">
+  <label for="address">Address:</label>
+  <%= @street1%>
+  <% if !@street2.nil? %>
+      <%= @street2%>
+  <%end%>
+  <%= @city %>
+  <%= @zipcode %>
+</div>
+<div class = "row">
+  <label for="phone">Phone Number:</label>
+  <%= @phone%>
+</div>
+<div class = "row">
+  <label for="email">Email:</label>
+  <%= @email%>
+</div>
+
+<div class = "row">
+  <label for="order_id">Order ID:</label>
+  <%= @order_id%>
+</div>
+<div class = "row">
+  <label for="Model Name">Model Type:</label>
+  <%= @model_name%>
+</div>
+<div class = "row">
+  <label for="Model Number">Model Number:</label>
+  <%= @model%>
+</div>
+<div class = "row">
+  <label for="quantity">Quantity:</label>
+  <%= @quantity%>
+</div>
+<div class = "row">
+  <label for="status">Status:</label>
+  <%= @status%>
+</div>
+
+<div class="col-lg-12 main-content-feature text-center">
+  <div class="row">
+    <p><a href="/user/view/<%= @user.id %>">&larr; Return to User Page</a></p>
+  </div>
+</div>
+</div>
