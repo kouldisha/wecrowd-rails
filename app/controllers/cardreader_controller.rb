@@ -1,6 +1,5 @@
 class CardreaderController < ApplicationController
   require 'net/http'
-
   before_filter 'check_user'
 
   def check_user
@@ -69,14 +68,13 @@ class CardreaderController < ApplicationController
                     shipping_method: shipping_method,
                     model_id: model
                                   })
-    #response = @card_reader.order_cardreader(order_params)
-    response = @card_reader.test_create(order_params)
+    response = @card_reader.order_cardreader(order_params)
+    #response = @card_reader.test_create(order_params)
     order_id = response["order_id"]
     @status = response["status"]
     @card_reader.order_id = order_id
     @card_reader.status = @status
     @card_reader.save
-    #redirect_to("/cardreader/order_summary/#{@user.id}/#{@order_id}")
     redirect_to("/cardreader/order_summary/#{@user.id}/#{order_id}")
   end
 
@@ -84,8 +82,8 @@ class CardreaderController < ApplicationController
     @order_id = params[:order_id]
     order_params = {"order_id" => @order_id}
     @card_reader = Cardreader.find_by_order_id(@order_id)
-    #summary_response = @card_reader.find_cardreader(order_params)
-    summary_response = @card_reader.test_find(order_params)
+    summary_response = @card_reader.find_cardreader(order_params)
+    #summary_response = @card_reader.test_find(order_params)
     @name = summary_response["shipping_contact"]["name"]
 
     #user's shipping information
@@ -103,7 +101,6 @@ class CardreaderController < ApplicationController
     #order logistics
     @quantity = summary_response["quantity"]
     @status =  summary_response["status"]
-
   end
 
 

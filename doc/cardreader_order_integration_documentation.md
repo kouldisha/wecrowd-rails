@@ -37,5 +37,8 @@ Inside the "order_summary" action/function in the cardreader_controller.rb, we f
 If you return to the user page, there will be a table which displays all the card readers that the merchant has ordered. There is also a "New Order?" link which will render the original "order_form" page where the merchant can order a new card reader.
 
 
-
+**IMPORTANT NOTE***
+    Inside the cardreader model (cardreader.rb under app/models), there are two functions named "test_create" and "test_find". These functions were used to make test API calls to the API written by intern Jitesh Maiyuran which in turn made API calls directly to POS portal. Since all the API was not ready for production when first integrated into WeCrowd, we made local machine to local machine API calls via NGROK.
+    These two functions will not work unless the NGROK server is correctly set up, running and the base URL is the one that's newly generated. These functions are still here for you to see how we made API calls to POS Portal without going through WePay.
+    
     
