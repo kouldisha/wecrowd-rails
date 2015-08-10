@@ -13,6 +13,7 @@ The general flow behind ordering a card reader is the following:
 The WeCrowd URL to began the order of a card reader will be: Rails.application.secrets.host + /cardreader/order_form/:user_id. (If you are running WeCrowd locally, then the base URL will be your local IP. On production, it would be wecrowd.wepay.com)
 <br>
 In the config/routes.rb, the lines correspond to the HTTP GET and POST requests for this page. 
+    <br>
     get '/cardreader/order_form/:user_id', :to => "cardreader#order_form"
     <br>
     post '/cardreader/order_form/:user_id', :to => "cardreader#submit_order"
